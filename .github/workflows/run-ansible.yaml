@@ -1,4 +1,4 @@
-oname: Run Ansible
+name: Run Ansible
 on:
   workflow_dispatch:
  
