@@ -42,6 +42,9 @@ jobs:
       working-directory: ./devops/ansible/
       run: |
        ansible all -m ping
+    - name: Display directory
+      run: |
+       ls -la
     - name: Run Ansible Playbooks
       working-directory: ./devops/ansible/
       run: |
