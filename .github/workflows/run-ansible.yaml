@@ -46,6 +46,11 @@ jobs:
       run: |
        pwd
        ls -la ./devops/ansible
+    - name: Download the file from GitHub
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/mikegre68/roadtok8s-py/refs/heads/main/.github/workflows/install-nginx.yaml # Replace with the raw URL
+        dest: ./devops/ansible/ 
+
     - name: Run Ansible Playbooks
       working-directory: ./devops/ansible/
       run: |
