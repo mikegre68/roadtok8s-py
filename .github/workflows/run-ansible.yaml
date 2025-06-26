@@ -29,7 +29,6 @@ jobs:
         echo "${{ secrets.AKAMAI_INSTANCE_IP_ADDRESS }}" >> $INVENTORY_FILE
     - name: Ansible Default Configuration File
       run: |
-        mkdir -p ./devops/ansible/
         cat <<EOF > ./devops/ansible/ansible.cfg
         [defaults]
         ansible_python_interpreter = '/usr/bin/python3'
