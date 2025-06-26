@@ -46,7 +46,7 @@ jobs:
       working-directory: ./devops/ansible/
       run: |
         mkdir -p ./devops/ansible/
-        cat <<EOF > ./devops/ansible/install-nginx.yaml
+        cat <<EOF > install-nginx.yaml
         - name: Install NGINX
           hosts: all
           become: true
