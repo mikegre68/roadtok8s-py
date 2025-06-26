@@ -42,6 +42,20 @@ jobs:
       working-directory: ./devops/ansible/
       run: |
        ansible all -m ping
+    - name: Create install-nginx.yaml
+      working-directory: ./devops/ansible/
+      run: |
+        cat <<EOF > ./devops/ansible/install-nginx.yaml
+        - name: Install NGINX
+          hosts: all
+          become: true
+          tasks:
+          - name: Install NGINX
+            apt:
+              name: nginx
+              state: present
+              update_cache: yes
+        EOF
     - name: Run Ansible Playbooks
       working-directory: ./devops/ansible/
       run: |
