@@ -42,35 +42,6 @@ jobs:
       working-directory: ./devops/ansible/
       run: |
        ansible all -m ping
-    - name: Create install-nginx.yaml
-      working-directory: ./devops/ansible/
-      run: |
-        mkdir -p ./devops/ansible/
-        cat <<EOF > install-nginx.yaml
-        - name: Install NGINX
-          hosts: all
-          become: true
-          tasks:
-          - name: Install NGINX
-            apt:
-              name: nginx
-              state: present
-              update_cache: yes
-          - name: Ensure NGINX is running
-            service:
-              name: nginx
-              state: started
-              enabled: yes
-        EOF
-    - name: Create deploy-python.yaml
-      working-directory: ./devops/ansible/
-      run: |
-        mkdir -p ./devops/ansible/
-        cat <<EOF > deploy-python.yaml
-        - name: Deploy Python app
-          hosts: all
-          become: yes
-        EOF
     - name: Run Ansible Playbooks
       working-directory: ./devops/ansible/
       run: |
