@@ -20,6 +20,13 @@ def hello_index():
     """
     return{"Hello": "From another route"}
 
+@app.get("/debug")
+def debug_response():
+    """
+    Returns a Python Dictionay that says hello
+    """
+    return{"Response": "I got it working!!!"}
+
 @app.get("/api/v1/hello-world/")
 def read_hello_world():
     """
