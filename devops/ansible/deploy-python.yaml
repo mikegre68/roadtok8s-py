@@ -1,7 +1,7 @@
 - name: Deploy Python app
   hosts: all
   become: yes
-    tasks:
+  tasks:
     - name: Update and upgrade system
       apt:
         upgrade: yes
@@ -75,4 +75,3 @@
       systemd:
         name: nginx
         state: restarted
-
